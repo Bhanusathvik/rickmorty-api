@@ -21,13 +21,15 @@ dto/         PagedResponse, AuthResponse
 ## 1. Set up MongoDB Atlas
 1. Create a free cluster at https://www.mongodb.com/cloud/atlas
 2. Create a database user and allow your IP (or `0.0.0.0/0` for testing)
-3. Grab your connection string, e.g.
+3. Grab your connection string, e.g. (Already connected to mine)
    `mongodb+srv://<username>:<password>@<cluster-url>/rickmorty?retryWrites=true&w=majority`
 
 ## 2. Configure environment variables
 ```
 $env:MONGODB_URI="mongodb+srv://bhanusathvik16_db_user:<Db password >@cluster0.gwqii3u.mongodb.net/rickmorty?appName=Cluster0"
 $env:JWT_SECRET="mN0yAUEYhv8MF0w8dEBX74i36CUs5q3tsyi/C8NONjs="
+
+If you want access for Atlas Database, mail me at bhanusathvik16@gmail.com
 ```
 ## 3. Run it
 ```
@@ -37,6 +39,11 @@ App starts on `http://localhost:8080`.
 
 ## API Reference
 ```
+
+NOTE:: THERE IS NO UI. SO CHECK EVERYTHING WITHIN TERMINAL ONLY!!!!
+After you run the server in a terminal. open another one and run the below stuff
+
+
 > $body = @{ username = "rick"; password = "wubbalubba" } | ConvertTo-Json
 >> $response = Invoke-RestMethod -Uri "http://localhost:8080/api/auth/register" -Method Post -ContentType "application/json" -Body $body
 >> $response
